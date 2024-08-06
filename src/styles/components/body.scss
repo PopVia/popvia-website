@@ -1,0 +1,73 @@
+.body {
+    padding-bottom: 100px;
+    max-width: 1200px;
+    margin: auto;
+
+    &__wrapper {
+        padding: 0 50px 250px 50px;
+        border-bottom-left-radius: 138px;
+        border-bottom-right-radius: 138px;
+        @media(max-width: 800px){
+            padding: 100px 5%;
+        }
+        h1 {
+            margin: 0;
+            font-size: 48px;
+            color: $bright-purple;
+            font-family: 'Alata', sans-serif;
+            padding: 100px 50px;
+            @media(max-width: 800px){
+                padding: 100px 0;
+            }
+        }
+    }
+    .card-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 50px; 
+        padding: 0 50px;
+        @media(max-width: 1050px){
+            grid-template-columns: repeat(2, 1fr); 
+        }
+        @media(max-width: 750px){
+            grid-template-columns: 1fr;
+        }
+        @media(max-width: 700px){
+            padding: 0;
+        }
+    }
+
+    .card {
+        padding: 20px;
+        background-color: #fff; 
+        border: 1px solid $dark; 
+        transition: transform 0.3s; 
+        text-decoration: none!important;
+        min-height: 300px;
+        &:hover {
+            background-color: $light-purple; 
+            color: $white; 
+        }
+
+        .top {
+            margin-bottom: 10px;
+        }
+
+        .bottom {
+            p {
+                margin: 0;
+                font-size: 1.4rem;
+            }
+        }
+        h3 {
+            font-size: 2rem;
+            text-decoration: none!important;
+            margin-top: 0;
+        }
+
+        p {
+
+        }
+    }
+
+}

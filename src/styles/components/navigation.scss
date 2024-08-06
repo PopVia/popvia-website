@@ -1,0 +1,75 @@
+.navigation {
+    background-color: $dark;
+    padding: 30px 0;
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        .nav-logo {
+            height: 50px;
+        }
+
+        img, .nav-link {
+            margin-right: 24px;
+        }
+
+        .nav-link {
+            color: $bright-purple;
+            transition: 0.3s;
+            text-decoration: none;
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+
+            span {
+                background-color: $bright-purple;
+                height: 3px;
+                width: 25px;
+                margin: 3px 0;
+                transition: 0.3s;
+            }
+        }
+
+        .nav-links {
+            display: flex;
+
+            @media (max-width: 800px) {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: $light-purple;
+                width: 100%;
+                padding: 10px;
+                border-top: 1px solid $bright-purple;
+
+                .nav-link {
+                    margin: 10px 0;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 800px) {
+        .hamburger {
+            display: flex;
+        }
+
+        .nav-links.active {
+            display: flex;
+            background-color: $purple;
+            .nav-link {
+                color: $light;
+            }
+        }
+    }
+}

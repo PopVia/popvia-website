@@ -1,0 +1,91 @@
+.slider {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+
+  &__wrapper {
+    flex: 1;
+    position: relative;
+    height: 300px; 
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    &--active {
+      opacity: 1;
+      z-index: 2;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: -40px;
+    width: 100%;
+  }
+
+  &__dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &--active {
+      background-color: $light-purple;
+    }
+  }
+
+  &__button {
+    width: 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $dark;
+    color: $light;
+    cursor: pointer;
+    font-size: 24px;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 3;
+
+    &:hover {
+      background-color: darken($bright-purple, 10%);
+    }
+    @media(max-width: 700px){
+      display: none;
+    }
+
+    &--prev {
+      position: absolute;
+      left: -70px;
+      background-color: $bright-purple;
+    }
+
+    &--next {
+      position: absolute;
+      right: -70px;
+      background-color: $bright-purple;
+    }
+  }
+}
